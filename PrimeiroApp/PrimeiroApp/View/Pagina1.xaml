@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrimeiroApp.View.Pagina1"
+             xmlns:vm="clr-namespace:PrimeiroApp.ViewModel"
+             Title="Produtos">
+    <ContentPage.BindingContext>
+        <vm:AnimalViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid VerticalOptions="StartAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Padding="10"  Margin="0, 20, 0, 0">
+                <Label Text="Registrar novo Produto" FontSize="20"></Label>
+                <Entry Placeholder="Informe o nome do Produto" Text="{Binding Nome}" x:Name="Email"></Entry>
+                <Button Text="Registrar" Command="{Binding BotaoNovo}"></Button>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Padding="10" Margin="0, 20, 0, 0">
+                <Label Text="Selecione o item:"></Label>
+                <ListView ItemTapped="ListaAnimais_ItemTapped" ItemsSource="{Binding Lista}" x:Name="ListaAnimais">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label Text="{Binding Nome}" Padding="10"></Label>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </Grid>
+
+        
+
+    </ContentPage.Content>
+</ContentPage>

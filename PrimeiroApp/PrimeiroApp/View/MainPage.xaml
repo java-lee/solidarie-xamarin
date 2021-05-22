@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrimeiroApp.MainPage"
+             xmlns:views="clr-namespace:PrimeiroApp.View"
+             Title="Aplicativo">
+
+    <Shell.FlyoutHeader>
+        <views:Cabecalho />
+    </Shell.FlyoutHeader>
+
+    <ShellItem Route="Login" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate views:Login}"/>
+    </ShellItem>
+
+    <FlyoutItem Title="Primeira Aba">
+        <Tab Title="Início">
+            <ShellContent Route="Pagina1">
+                <views:Pagina1/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Segunda Aba">
+        <Tab Title="Sobre">
+            <ShellContent Route="Pagina2">
+                <views:Pagina2/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+</Shell>
