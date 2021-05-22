@@ -6,7 +6,7 @@ namespace PrimeiroApp.Model
 {
     class Requisicao
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public DateTime DataValidade { get; set; }
 
@@ -15,6 +15,5 @@ namespace PrimeiroApp.Model
         //public virtual ICollection<Produto> Produto { get; set; }
         //public ICollection<Produto> Produto { get; set; }
 
-        public bool Status { get; set; }
     }
 }
