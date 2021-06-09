@@ -3,32 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PrimeiroApp.View.Login"
              xmlns:vm="clr-namespace:PrimeiroApp.ViewModel"
-             Shell.FlyoutBehavior="Disabled" Shell.NavBarIsVisible="False">
+             Shell.FlyoutBehavior="Disabled" 
+             Shell.NavBarIsVisible="False"
+             Title = ""
+             >
     <ContentPage.BindingContext>
         <vm:UsuarioViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <Grid VerticalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="#FF97A1">
+            <AbsoluteLayout HeightRequest="100"></AbsoluteLayout>
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" VerticalOptions="Center">
-                <Frame BackgroundColor="Fuchsia" CornerRadius="5">
-                    <Label Text="Primeiro Aplicativo" TextColor="White" FontSize="30" HorizontalTextAlignment="Center"/>
-                </Frame>
-            </StackLayout>
+                <StackLayout Grid.Row="0" VerticalOptions="Center">
+                    <Frame BackgroundColor="#FFCDD2" CornerRadius="5">
+                        <Label Text="Solidarie" TextColor="White" FontSize="30" HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </StackLayout>
 
-            <StackLayout Grid.Row="1">
-                <Entry Placeholder="Informe o email" Text="{Binding Email}" x:Name="Email"></Entry>
-                <Entry Placeholder="Informe a senha" Text="{Binding Senha}" x:Name="Senha" IsPassword="True"></Entry>
-                <Button Text="Acessar" Command="{Binding BotaoLogin}"></Button>
-                <Button Text="Criar novo registro" Clicked="Button_Clicked"></Button>
-            </StackLayout>
-        
-        </Grid>
+                <StackLayout Grid.Row="1">
+                    <Entry Placeholder="Informe o email" Text="{Binding Email}" x:Name="Email"></Entry>
+                    <Entry Placeholder="Informe a senha" Text="{Binding Senha}" x:Name="Senha" IsPassword="True"></Entry>
+                    <Button Text="Acessar" Command="{Binding BotaoLogin}"></Button>
+                    <Button Text="Criar novo registro" Clicked="Button_Clicked"></Button>
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
         
     </ContentPage.Content>
 </ContentPage>

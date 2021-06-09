@@ -83,12 +83,13 @@ namespace PrimeiroApp.ViewModel
         public Command BotaoAlterar { get; set; }
         public Command BotaoExcluir { get; set; }
 
-        private AnimalService service = new AnimalService();
+        //private AnimalService service = new AnimalService();
 
         private async Task AcaoNovo()
         {
             try
             {
+                /*
                 if (await service.NovoAnimal(Nome))
                 {
                     await Application.Current.MainPage.DisplayAlert("Sucesso", "Animal Registrado!", "OK");
@@ -96,8 +97,9 @@ namespace PrimeiroApp.ViewModel
                 }
                 else
                 {
+                */
                     await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível inserir!", "Ok");
-                }
+                //}
             }
             catch (Exception e)
             {
@@ -109,6 +111,7 @@ namespace PrimeiroApp.ViewModel
         {
             try
             {
+                /*
                 if (await service.AlterarAnimal(Nome, AnimalID))
                 {
                     await Application.Current.MainPage.DisplayAlert("Sucesso", "Animal Alterado!", "OK");
@@ -119,6 +122,7 @@ namespace PrimeiroApp.ViewModel
                 {
                     await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível alterar!", "Ok");
                 }
+                */
             }
             catch (Exception e)
             {
@@ -130,6 +134,7 @@ namespace PrimeiroApp.ViewModel
         {
             try
             {
+                /*
                 if (await service.ExcluirAnimal(AnimalID))
                 {
                     await Application.Current.MainPage.DisplayAlert("Sucesso", "Animal Excluído!", "OK");
@@ -138,8 +143,9 @@ namespace PrimeiroApp.ViewModel
                 }
                 else
                 {
+                */
                     await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível excluir!", "Ok");
-                }
+                //}
             }
             catch (Exception e)
             {
@@ -157,7 +163,7 @@ namespace PrimeiroApp.ViewModel
         private async void ListarAnimais()
         {
             var usuario = JsonConvert.DeserializeObject<Usuario>(Preferences.Get("usuario", string.Empty));
-            Lista = (await service.GetAnimais()).Where(a => a.Usuario == usuario.Email).ToList();
+            //Lista = (await service.GetAnimais()).Where(a => a.Usuario == usuario.Email).ToList();
             Nome = "";
             AnimalID = "";
         }

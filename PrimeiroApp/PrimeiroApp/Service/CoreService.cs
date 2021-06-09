@@ -28,7 +28,7 @@ namespace PrimeiroApp.Service
             try
             {
                 await chamadaBanco.Child(NomeNoBanco)
-                    .PostAsync(model.ToString());
+                    .PostAsync(model);
                 return true;
             }
             catch (Exception e)

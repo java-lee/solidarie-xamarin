@@ -21,20 +21,5 @@ namespace PrimeiroApp.View
         {
             InitializeComponent();
         }
-
-        private async void ListaAnimais_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            var animal = (Animal)e.Item;
-            await Navigation.PushAsync(new AlterarExcluirAnimal(animal));
-        }
-
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            AnimalService service = new AnimalService();
-            var vm = BindingContext as AnimalViewModel;
-            var usuario = JsonConvert.DeserializeObject<Usuario>(Preferences.Get("usuario", string.Empty));
-            vm.Lista = (await service.GetAnimais()).Where(a => a.Usuario == usuario.Email).ToList();
-        }
     }
 }
