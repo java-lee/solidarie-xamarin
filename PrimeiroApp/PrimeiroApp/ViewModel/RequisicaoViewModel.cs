@@ -78,7 +78,7 @@ namespace PrimeiroApp.ViewModel
             }
         }
 
-        private List<Requisicao> _ListarRequisicao;
+        private List<Requisicao> _ListaRequisicao;
         public List<Requisicao> ListaRequisicao
         {
             set
@@ -119,7 +119,7 @@ namespace PrimeiroApp.ViewModel
             {
                 Descricao = Descricao,
                 DataValidade = DataValidade,
-                ProdutoID = Produto.ProdutoID,
+                ProdutoID = ProdutoID,
             };
         }
 
@@ -198,9 +198,8 @@ namespace PrimeiroApp.ViewModel
             ListaProduto = await serviceProduto.Get();
             ListaRequisicao = await serviceRequisicao.Get();
             Descricao = "";
-            DataValidade = "";
             RequisicaoID = "";
-            Produto = null;
+            ProdutoID = null;
         }
 
     }

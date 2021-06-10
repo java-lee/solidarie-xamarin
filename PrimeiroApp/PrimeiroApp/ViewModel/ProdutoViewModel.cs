@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace PrimeiroApp.ViewModel
 {
-    class ProdutoViewModel : INotifyPropertyChanged
+    public class ProdutoViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

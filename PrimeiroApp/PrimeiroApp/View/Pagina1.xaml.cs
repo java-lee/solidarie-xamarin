@@ -21,5 +21,18 @@ namespace PrimeiroApp.View
         {
             InitializeComponent();
         }
+        private async void ListaProduto_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var Produto = (Produto)e.Item;
+            await Navigation.PushAsync(new AlterarExcluirAnimal(Produto));
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            ProdutoService service = new ProdutoService();
+            var vm = BindingContext as ProdutoViewModel;
+            vm.Lista = await service.Get();
+        }
     }
 }

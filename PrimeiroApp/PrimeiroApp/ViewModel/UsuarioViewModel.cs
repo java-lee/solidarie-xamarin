@@ -65,11 +65,13 @@ namespace PrimeiroApp.ViewModel
                 {
                     await Application.Current.MainPage.DisplayAlert("Sucesso", "Usuario Registrado!", "OK");
                     await Application.Current.MainPage.Navigation.PopAsync();
-                } else
+                }
+                else
                 {
                     await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível inserir!", "Ok");
                 }
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 await Application.Current.MainPage.DisplayAlert("Erro", "Erro: " + e.Message, "OK");
             }

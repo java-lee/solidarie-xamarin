@@ -14,12 +14,12 @@ namespace PrimeiroApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AlterarExcluirAnimal : ContentPage
     {
-        public AlterarExcluirAnimal(Animal animal)
+        public AlterarExcluirAnimal(Produto produto)
         {
             InitializeComponent();
-            var vm = BindingContext as AnimalViewModel;
-            vm.AnimalID = animal.AnimalID;
-            vm.Nome = animal.Nome;
+            var vm = BindingContext as ProdutoViewModel;
+            vm.ProdutoID = produto.ProdutoID;
+            vm.Nome = produto.Nome;
         }
     }
 }

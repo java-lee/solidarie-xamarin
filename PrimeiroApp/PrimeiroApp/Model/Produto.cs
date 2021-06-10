@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrimeiroApp.Model
 {
-    class Produto
+    public class Produto
     {
         public string ProdutoID { get; set; }
 

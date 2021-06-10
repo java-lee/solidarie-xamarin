@@ -18,7 +18,22 @@
                 <Label Text="Registrar novo Produto" FontSize="20"></Label>
                 <Entry Placeholder="Informe o nome" Text="{Binding Nome}" x:Name="Nome"></Entry>
                 <Entry Placeholder="Informe o genero" Text="{Binding Genero}" x:Name="Genero"></Entry>
-                <Button Text="Registrar" Command="{Binding BotaoRegistrar}"></Button>
+                <Button Text="Registrar" Command="{Binding BotaoNovo}"></Button>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Padding="10" Margin="0, 20, 0, 0">
+                <Label Text="Selecione o item:"></Label>
+                <ListView ItemTapped="ListaProduto_ItemTapped" ItemsSource="{Binding Lista}" x:Name="ListaProduto">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label Text="{Binding Nome}" Padding="10"></Label>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </Grid>
 
