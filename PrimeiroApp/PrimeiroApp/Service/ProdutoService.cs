@@ -24,7 +24,7 @@ namespace PrimeiroApp.Service
              {
                  Nome = item.Object.Nome,
                  Genero = item.Object.Genero,
-                 Id = item.Key
+                 ProdutoID = item.Key
              }).ToList();
         }
     }

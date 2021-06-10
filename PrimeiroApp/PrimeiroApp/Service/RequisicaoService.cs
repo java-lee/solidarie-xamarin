@@ -1,6 +1,7 @@
 ﻿using PrimeiroApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,9 +11,17 @@ namespace PrimeiroApp.Service
     {
         protected override string NomeNoBanco => "Requisicao";
 
-        public override Task<List<Requisicao>> Get()
+        public async override Task<List<Requisicao>> Get()
         {
-            throw new NotImplementedException();
+            return (await chamadaBanco
+             .Child(NomeNoBanco)
+             .OnceAsync<Requisicao>()).Select(item => new Requisicao
+             {
+                 Descricao = item.Object.Descricao,
+                 DataValidade = item.Object.DataValidade,
+                 ProdutoID = item.Object.ProdutoID,
+                 RequisicaoID = item.Key
+             }).ToList();
         }
     }
 }

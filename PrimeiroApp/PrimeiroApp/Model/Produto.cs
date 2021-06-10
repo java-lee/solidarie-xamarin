@@ -6,7 +6,7 @@ namespace PrimeiroApp.Model
 {
     class Produto
     {
-        public string Id { get; set; }
+        public string ProdutoID { get; set; }
 
         public string Nome { get; set; }
 
